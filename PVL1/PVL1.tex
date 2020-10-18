@@ -4,7 +4,7 @@
 \usepackage[utf8]{inputenc}
 
 \title{PVL 1 - theoretische Informatik}
-\author{Sophia Köhler}
+\author{Sophia Köhler, 530976, Bachelor Informatik}
 \date{16.10.2020}
 
 \begin{document}
@@ -101,4 +101,50 @@ Addieren:
 \[1+2+3+...+(n+1)^2 =  \frac{2*n^3+9*n^2+13*n+6}{6} \]
 \newline
 Somit ist gezeigt, dass Induktionsbehauptung aus der Induktionsvorraussetzung folgt.
+
+\section{}
+\subsection{}
+Für welche n gilt:
+\[n^2-1 \le \frac{1}{6}*n^3+\frac{1}{2}*n^2+\frac{1}{3}*n-1\]
+Zunächst kann man auf beiden Seiten 1 addieren und ein n ausklammern:
+\[n*n \le n*(\frac{1}{6}*n^2+\frac{1}{2}*n+\frac{1}{3})\]
+Somit kennt man die erste Nullstelle, nämlich 0, da ein Term multipliziert mit null auch immer null ergibt.
+Man rechnet nun weiter mit:
+\[n \le \frac{1}{6}*n^2+\frac{1}{2}*n+\frac{1}{3}\]
+Erweitern mit 6:
+\[6*n \le n^2+3*n+2\]
+\[0 \le n^2-3*n+2\]
+pq Formel für das Lösen der rechten Seite: \[n_{1,2} = -\left(\frac{p}{2}\right) \pm \sqrt{ \left(\frac{p}{2}\right)^{2}-q} \]
+ $n_1=1$ und  $n_2=2$
+ \newline
+ Somit kennt man alle Nullstellen mit $n_1=0$,  $n_2=1$ und  $n_3=2$
+ \newline
+ Nun muss gezeigt werden, dass die Gleichung nur für alle  $0\le n \le 2$ gilt. Es folgt also Induktion.
+ \subsection{}
+Induktion von \[6*n \le n^2+3*n+2\]
+\subsubsection{Induktionsanfang}
+
+für $n=0$
+\[0 \le 0\]
+für $n=1$
+\[6 \le 1+3+2\]
+\[ 6 \le 6 \]
+\newline
+für $n=2$
+\[12 \le 4+6+2\]
+\[ 12 \le 12 \]
+\newline
+
+Induktionsanfang stimmt zunächst.
+\subsubsection{Induktionsschritt}
+\paragraph{Induktionsvorraussetzung}\mbox{}
+
+Vorschrift gilt nur für:$n_1=0$,  $n_2=1$ und  $n_3=2$
+
+\paragraph{Induktionsbehauptung}\mbox{}
+Induktion über Gegenbeweis:
+Vorschrift darf nicht gelten für: $n+1$ also Induktion von \[6*(n+1) \le (n+1)^2+3*(n+1)+2\]
+
+
+
 \end{document}
