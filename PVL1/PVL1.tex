@@ -63,4 +63,42 @@ nun folgt Umformung in Nullstellenform:
 \[\frac{(n+2)*(n+1)}{2} \]
 \newline
 Somit ist gezeigt, dass Induktionsbehauptung aus der Induktionsvorraussetzung folgt.
+
+\subsection{}
+Induktion von \[ \sum_{k=1}^{n}{k^2} = \frac{(2*n+1)*(n+1)*n}{6} \]
+\subsubsection{Induktionsanfang}
+
+für $n=1$
+\[ \sum_{k=1}^{1}{k^2} = \frac{(2*1+1)*(1+1)*1}{6} \]
+\[ 1 = 1 \]
+\newline
+für $n=2$
+\[ \sum_{k=1}^{2}{k^2} = \frac{(4*1+1)*(2+1)*2}{6} \]
+\[ 1+4 = 5 \]
+\newline
+
+Induktionsanfang stimmt zunächst.
+\subsubsection{Induktionsschritt}
+\paragraph{Induktionsvorraussetzung}\mbox{}
+
+Vorschrift gilt für: $k=n$ also \[1+2+9+n^2 =\frac{(2*n+1)*(n+1)*n}{6} \]
+
+\paragraph{Induktionsbehauptung}\mbox{}
+
+Vorschrift gilt auch für: $k=n+1$ also \[1+2+3+...+(n+1)^2 = \frac{(2*(n+1)+1)*((n+1)+1)*(n+1)}{6} \]
+bzw.
+\[1+2+3+...+(n+1)^2 = \frac{2*n^3+9*n^2+13*n+6}{6} \]
+\clearpage
+\paragraph{Induktionsbeweis}\mbox{}
+
+Aus der Induktionsbehauptung muss nun die Vorraussetzung folgen.
+
+es sollte also gelten: \[1+2+3+...+(n+1)^2 = \frac{(2*n+1)*(n+1)*n}{6} + (n+1)^2= \frac{2*n^3+9*n^2+13*n+6}{6}\]
+\[1+2+3+...+(n+1)^2 = \frac{(2*n+1)*(n+1)*n}{6}+(n+1)^2 \]
+Ausmultiplizieren, binomische Formel und Erweitern:
+\[1+2+3+...+(n+1)^2 = \frac{2*n^3+3*n^2+n}{6}+\frac{6*n^2+12*n+6}{6} \]
+Addieren:
+\[1+2+3+...+(n+1)^2 =  \frac{2*n^3+9*n^2+13*n+6}{6} \]
+\newline
+Somit ist gezeigt, dass Induktionsbehauptung aus der Induktionsvorraussetzung folgt.
 \end{document}
