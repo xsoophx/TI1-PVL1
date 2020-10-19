@@ -144,7 +144,49 @@ Vorschrift gilt nur für:$n_1=0$,  $n_2=1$ und  $n_3=2$
 \paragraph{Induktionsbehauptung}\mbox{}
 Induktion über Gegenbeweis:
 Vorschrift darf nicht gelten für: $n+1$ also Induktion von \[6*(n+1) \le (n+1)^2+3*(n+1)+2\]
+\section{}
 
-
-
+\[V(n) = 2* V\left(\frac{n}{2}\right)+ b*n +c \] mit V(1) = 1 und $n \geq 2$
+\newline
+Lösen der Rekursionsgleichung zunächst durch Ausprobieren.
+$n = 2^k$ : \[V(2^k) = 2* V\left(2^{k-1}\right)+  2^k*b +c \] 
+\[V(2^k) = 2* \left(2*V\left(2^{k-2}\right)+2^{k-1}*b+c_2\right )+  2^k*b +c_1 \] 
+\[V(2^k) = 2^2*V\left(2^{k-2}\right)+2*2^{k-1}*b+2*c_2+  2^k*b +c_1 \] 
+\[V(2^k) = 2^2*\left(2*V\left(2^{k-3}\right)+2^{k-2}*b+c_3\right)+2*2^{k-1}*b+2*c_2+  2^k*b +c_1 \] 
+\[V(2^k) = 2^3*V\left(2^{k-3}\right)+2^2*2^{k-2}*b+2^2*c_3+2*2^{k-1}*b+2*c_2+  2^k*b +c_1 \] 
+\[V(2^k) = 2^3*V\left(2^{k-3}\right)+2^{k}*3*b+(2^2*c_3+2^1*c_2+ 2^0*c_1) \] 
+\newline
+c kann ausgeklammert werden, da das c durch die Rekursion immer den gleichen Wert hat.
+\[V(2^k) = 2^j*V\left(2^{k-j}\right)+2^{k}*j*b+ c*\sum_{i=0}^{j-1}{2^i} \] 
+\[V(2^k) = 2^j*V\left(2^{k-j}\right)+2^{k}*j*b+ c*(2^j-1) \] 
+\newline
+Nun folgt Verifikation durch Induktion.
+Der Induktionsanfang $j=1$ entspricht der Rekursionsgleichung
+\[V(n) = 2* V\left(\frac{n}{2}\right)+ b*n +c \]
+bzw.
+ \[V(2^k) = 2* V\left(2^{k-1}\right)+  2^k*b +c \] 
+ Nun folgt Schritt $j \rightarrow j+1$
+\[V(2^k) = 2^j*V\left(2^{k-j}\right)+2^{k}*j*b+ c*(2^j-1) \] (Induktionsannahme)
+\[V(2^k) = 2^j*\left(2* V\left(2^{k-1-j}\right)+  2^{k-j}*b +c\right)+2^{k}*j*b+ c*(2^j-1) \] 
+\[V(2^k) = 2^{j+1}*V\left(2^{k-1-j}\right)+2^{k}*b +2^j*c+2^k*j*b+2^j*c-c \] 
+\[V(2^k) = 2^{j+1}*V\left(2^{k-1-j}\right)+(1+j)*2^k*b-(2^{j+1}*c+c)\] 
+\newline
+für j = k
+\[V(2^k) = 2^k*V\left(2^{k-k}\right)+2^{k}*k*b+ c*(2^k-1) \] 
+\[V(2^k) = 2^k*V\left(1\right)+2^{k}*k*b+ c*2^k-c \] 
+\[V(2^k) = 2^k+2^{k}*(k*b+ c)-c \]  da V(1) = 1
+\newline mit $n=2^k$
+\[V(n) = n+n*(log_2n*b+ c)-c \] 
+\newline
+\begin{center}
+\begin{tabular}[h]{l|c|c}
+n & $2* V\left(\frac{n}{2}\right)+ b*n +c$ & $ n+n*(log_2n*b+ c)-c$ \\
+\hline
+1 & 1 & 1 \\
+\hline
+2 & $2+2*b+c$ & $2+2*b+c$ \\
+\hline
+4 & $4+8*b+3*c$ & $4+8*b+3*c$ \\
+\end{tabular}
+\end{center}
 \end{document}
